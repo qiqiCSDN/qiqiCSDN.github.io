@@ -4,23 +4,48 @@
   
     
     <entry>
-      <title>第一篇文章</title>
-      <link href="/2023/01/04/2023-1-4-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/01/04/2023-1-4-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <title>Hexo简介</title>
+      <link href="/2023/01/05/2023-1-5-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/01/05/2023-1-5-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第一篇文章"><a href="#这是我的第一篇文章" class="headerlink" title="这是我的第一篇文章"></a>这是我的第一篇文章</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2>]]></content>
       
       
       <categories>
           
-          <category> java </category>
+          <category> Hexo </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 标签3 </tag>
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java简介</title>
+      <link href="/2023/01/04/2023-1-4-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/01/04/2023-1-4-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
             
         </tags>
       
