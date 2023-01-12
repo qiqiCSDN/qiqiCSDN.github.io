@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>时间加减</title>
+      <link href="/2023/01/12/Java-%E6%97%B6%E9%97%B4%E5%8A%A0%E5%87%8F/"/>
+      <url>/2023/01/12/Java-%E6%97%B6%E9%97%B4%E5%8A%A0%E5%87%8F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="JAVA的时间加减"><a href="#JAVA的时间加减" class="headerlink" title="JAVA的时间加减"></a>JAVA的时间加减</h2><h3 id="1-获取当前系统时间"><a href="#1-获取当前系统时间" class="headerlink" title="1.获取当前系统时间"></a>1.获取当前系统时间</h3><blockquote><p>Date date = new Date();</p></blockquote><h3 id="2-实现时间的加减的两种方法"><a href="#2-实现时间的加减的两种方法" class="headerlink" title="2.实现时间的加减的两种方法"></a>2.实现时间的加减的两种方法</h3><h4 id="第一种-用java-text-SimpleDateFormat来实现"><a href="#第一种-用java-text-SimpleDateFormat来实现" class="headerlink" title="第一种: 用java.text.SimpleDateFormat来实现"></a>第一种: 用java.text.<a href="https://so.csdn.net/so/search?q=SimpleDateFormat&amp;spm=1001.2101.3001.7020">SimpleDateFormat</a>来实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SimpleDateFormat df=<span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;现在时间：&quot;</span>+df.format(date));</span><br><span class="line">System.out.println(<span class="string">&quot;昨天该时间：&quot;</span> + df.format(<span class="keyword">new</span> <span class="title class_">Date</span>(date.getTime() - <span class="number">1</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>)));</span><br><span class="line">System.out.println(<span class="string">&quot;明天该时间：&quot;</span> + df.format(<span class="keyword">new</span> <span class="title class_">Date</span>(date.getTime() + <span class="number">1</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>)));</span><br></pre></td></tr></table></figure><blockquote><p>获取当前毫秒值进行加减.</p></blockquote><h4 id="第二种-用java-util-Calender来实现"><a href="#第二种-用java-util-Calender来实现" class="headerlink" title="第二种:用java.util.Calender来实现"></a>第二种:用java.util.Calender来实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Calendar</span> <span class="variable">calendar</span> <span class="operator">=</span> Calendar.getInstance();</span><br><span class="line">calendar.setTime(date);<span class="comment">//设置起时间</span></span><br><span class="line">calendar.add(Calendar.YEAR, <span class="number">1</span>);<span class="comment">//增加一年</span></span><br><span class="line"><span class="comment">//calendar.add(Calendar.DATE, 1);//增加1天</span></span><br><span class="line"><span class="comment">//calendar.add(Calendar.DATE, -1);//减1天</span></span><br><span class="line"><span class="comment">//calendar.add(Calendar.MONTH, 1);//增加一个月</span></span><br><span class="line">System.out.println(<span class="string">&quot;输出::&quot;</span>+calendar.getTime());</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Map与List互转</title>
+      <link href="/2023/01/10/Java-08-List%E4%B8%8EMap%E4%BA%92%E8%BD%AC/"/>
+      <url>/2023/01/10/Java-08-List%E4%B8%8EMap%E4%BA%92%E8%BD%AC/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Map转List"><a href="#Map转List" class="headerlink" title="Map转List"></a>Map转List</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line">Map&lt;Integer, String&gt; mapDemo = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">      map.put(<span class="number">10</span>, <span class="string">&quot;apple&quot;</span>);</span><br><span class="line">      map.put(<span class="number">20</span>, <span class="string">&quot;orange&quot;</span>);</span><br><span class="line">      map.put(<span class="number">30</span>, <span class="string">&quot;banana&quot;</span>);</span><br><span class="line">      map.put(<span class="number">40</span>, <span class="string">&quot;watermelon&quot;</span>);</span><br><span class="line">      map.put(<span class="number">50</span>, <span class="string">&quot;dragonfruit&quot;</span>);</span><br></pre></td></tr></table></figure><h3 id="Map-转-List"><a href="#Map-转-List" class="headerlink" title="Map 转 List"></a>Map<Integer, Object> 转 List<Integer></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line">List&lt;Integer&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>(mapDemo.keySet());</span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">List&lt;Integer&gt; list2 = mapDemo.keySet().stream().collect(Collectors.toList());</span><br></pre></td></tr></table></figure><h3 id="Map-转-List-1"><a href="#Map-转-List-1" class="headerlink" title="Map 转 List"></a>Map<Integer, Object> 转 List<Object></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line"> List&lt;String&gt; list3 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>(mapDemo.values());</span><br><span class="line"> <span class="comment">//方法2</span></span><br><span class="line"> List&lt;String&gt; list4 = mapDemo.values().stream().collect(Collectors.toList());</span><br></pre></td></tr></table></figure><h2 id="List转Map"><a href="#List转Map" class="headerlink" title="List转Map"></a>List转Map</h2><h3 id="第一种（会出现键重复异常）"><a href="#第一种（会出现键重复异常）" class="headerlink" title="第一种（会出现键重复异常）"></a>第一种（会出现键重复异常）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以id为主键转为map</span></span><br><span class="line">Map&lt;Long, User&gt; map = list.stream().collect(Collectors.toMap(User::getId,Function.identity()));</span><br></pre></td></tr></table></figure><h3 id="第二种（针对第一种方法会出现情况）"><a href="#第二种（针对第一种方法会出现情况）" class="headerlink" title="第二种（针对第一种方法会出现情况）"></a>第二种（针对第一种方法会出现情况）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//给出key重复时，使用哪个key作为主键，以下代码中的(key1, key2) -&gt; key2)代表key1和key2键重复时返回key2做主键</span></span><br><span class="line">Map&lt;Long, User&gt; map = list.stream().collect(Collectors.toMap(User::getId, Function.identity(), (key1, key2) -&gt; key2));</span><br></pre></td></tr></table></figure><h3 id="第三种（只返回对象里某个属性时）"><a href="#第三种（只返回对象里某个属性时）" class="headerlink" title="第三种（只返回对象里某个属性时）"></a>第三种（只返回对象里某个属性时）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不想返回对象，只返回对象里某个属性时 采用这种方式</span></span><br><span class="line">Map&lt;Long, String&gt; map = list.stream().collect(Collectors.toMap(User::getId, User::getAge, (key1, key2) -&gt; key2));</span><br></pre></td></tr></table></figure><h3 id="第四种（以某个属性分组）"><a href="#第四种（以某个属性分组）" class="headerlink" title="第四种（以某个属性分组）"></a>第四种（以某个属性分组）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, List&gt; map = list.stream().collect(Collectors.groupingBy(User::getId));</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Stream </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实现字符串自增</title>
       <link href="/2023/01/10/Java-07-%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%87%AA%E5%A2%9E/"/>
       <url>/2023/01/10/Java-07-%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%87%AA%E5%A2%9E/</url>
