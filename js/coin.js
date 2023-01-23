@@ -3,7 +3,7 @@ var tipButtons = document.querySelectorAll('.tip-button')
 function coinAudio() {
     var coinAudio = document.getElementById("coinAudio");
     if (coinAudio) {
-        coinAudio.play();//有音频时播放
+        coinAudio.play(); //有音频时播放
     }
 }
 // Loop through all buttons (allows for multiple buttons on page)
