@@ -122,23 +122,23 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://qiqicsdn.github.io/posts/0.html"/>
-    <id>https://qiqicsdn.github.io/posts/0.html</id>
+    <title>Map与List互转</title>
+    <link href="https://qiqicsdn.github.io/posts/3c1e27f1.html"/>
+    <id>https://qiqicsdn.github.io/posts/3c1e27f1.html</id>
     <published>2023-12-07T13:14:04.871Z</published>
     <updated>2023-12-07T13:14:04.871Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Map转List">Map转List</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line">Map&lt;Integer, String&gt; mapDemo = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">      map.put(<span class="number">10</span>, <span class="string">&quot;apple&quot;</span>);</span><br><span class="line">      map.put(<span class="number">20</span>, <span class="string">&quot;orange&quot;</span>);</span><br><span class="line">      map.put(<span class="number">30</span>, <span class="string">&quot;banana&quot;</span>);</span><br><span class="line">      map.put(<span class="number">40</span>, <span class="string">&quot;watermelon&quot;</span>);</span><br><span class="line">      map.put(<span class="number">50</span>, <span class="string">&quot;dragonfruit&quot;</span>);</span><br></pre></td></tr></table></figure><h3 id="Map-Integer-Object-转-List">Map&lt;Integer, Object&gt; 转 List</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line">List&lt;Integer&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>(mapDemo.keySet());</span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">List&lt;Integer&gt; list2 = mapDemo.keySet().stream().collect(Collectors.toList());</span><br></pre></td></tr></table></figure><h3 id="Map-Integer-Object-转-List-2">Map&lt;Integer, Object&gt; 转 List</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line"> List&lt;String&gt; list3 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>(mapDemo.values());</span><br><span class="line"> <span class="comment">//方法2</span></span><br><span class="line"> List&lt;String&gt; list4 = mapDemo.values().stream().collect(Collectors.toList());</span><br></pre></td></tr></table></figure><h2 id="List转Map">List转Map</h2><h3 id="第一种（会出现键重复异常）">第一种（会出现键重复异常）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以id为主键转为map</span></span><br><span class="line">Map&lt;Long, User&gt; map = list.stream().collect(Collectors.toMap(User::getId,Function.identity()));</span><br></pre></td></tr></table></figure><h3 id="第二种（针对第一种方法会出现情况）">第二种（针对第一种方法会出现情况）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//给出key重复时，使用哪个key作为主键，以下代码中的(key1, key2) -&gt; key2)代表key1和key2键重复时返回key2做主键</span></span><br><span class="line">Map&lt;Long, User&gt; map = list.stream().collect(Collectors.toMap(User::getId, Function.identity(), (key1, key2) -&gt; key2));</span><br></pre></td></tr></table></figure><h3 id="第三种（只返回对象里某个属性时）">第三种（只返回对象里某个属性时）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不想返回对象，只返回对象里某个属性时 采用这种方式</span></span><br><span class="line">Map&lt;Long, String&gt; map = list.stream().collect(Collectors.toMap(User::getId, User::getAge, (key1, key2) -&gt; key2));</span><br></pre></td></tr></table></figure><h3 id="第四种（以某个属性分组）">第四种（以某个属性分组）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, List&gt; map = list.stream().collect(Collectors.groupingBy(User::getId));</span><br></pre></td></tr></table></figure>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;Map转List&quot;&gt;Map转List&lt;/h2&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class</summary>
-      
+    <summary type="html">Map与List互转</summary>
     
     
     
+    <category term="Note" scheme="https://qiqicsdn.github.io/categories/Note/"/>
+    
+    
+    <category term="笔记" scheme="https://qiqicsdn.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
